@@ -1,0 +1,22 @@
+<assembly
+		xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/3.0.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/3.0.0">
+	<id>bin</id>
+	<formats>
+		<format>zip</format>
+		<!-- <format>dir</format> -->
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<fileSets>
+		<fileSet>
+			<directory>${project.build.directory}</directory>
+			<outputDirectory>.</outputDirectory>
+			<includes>
+				<include>*.jar</include>
+				<include>Bumper_lib</include>
+				<include>Bumper_lib/*</include>
+			</includes>
+		</fileSet>
+	</fileSets>
+</assembly>

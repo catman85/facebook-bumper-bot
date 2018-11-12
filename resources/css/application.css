@@ -1,0 +1,9 @@
+.ButtonIO{
+    -fx-background-color:#1a2947;
+    -fx-text-fill:#e9ebee;
+}
+
+.CounterLabel{
+    -fx-font-size: 4em;
+    -fx-text-fill:#e9ebee;
+}

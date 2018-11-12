@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="400.0" maxWidth="600.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.org.javafx.bumperui.application.Controller">
+   <center>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="400.0" prefWidth="300.0" style="-fx-background-color: #4267b2;">
+               <children>
+                  <JFXButton buttonType="RAISED" layoutX="219.0" layoutY="249.0" onAction="#explore" prefHeight="30.0" prefWidth="30.0" ripplerFill="#cf46bf" style="-fx-background-color: #7694e4;" text="..." textAlignment="CENTER" AnchorPane.bottomAnchor="120.60000000000002">
+                     <font>
+                        <Font name="Tahoma" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXTextField fx:id="commentJFX" alignment="CENTER" layoutX="64.0" layoutY="87.0" prefHeight="30.0" prefWidth="170.0" promptText="Comment" style="-fx-background-color: #7694e4;" AnchorPane.bottomAnchor="240.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </JFXTextField>
+                  <JFXTextField fx:id="path" alignment="CENTER" layoutX="64.0" layoutY="200.0" prefHeight="30.0" prefWidth="170.0" promptText="Path to Permalinks (Posts)" style="-fx-background-color: #7694e4;" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="90.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </JFXTextField>
+                  <JFXTextField fx:id="sleepTimeJFX" alignment="CENTER" layoutX="64.0" layoutY="142.0" prefHeight="30.0" prefWidth="170.0" promptText="Sleep Time (ms)" style="-fx-background-color: #7694e4;" AnchorPane.bottomAnchor="180.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </JFXTextField>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="221.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="240.39999999999998" AnchorPane.leftAnchor="220.0">
+                     <image>
+                        <Image url="@../image/icons8-topic-24.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="221.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="180.0" AnchorPane.leftAnchor="220.0">
+                     <image>
+                        <Image url="@../image/icons8-sleep-24.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="78.0" fitWidth="154.0" layoutX="111.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="30.0">
+                     <image>
+                        <Image url="@../image/icons8-facebook-like-100.png" />
+                     </image>
+                     <effect>
+                        <Bloom threshold="0.0" />
+                     </effect>
+                  </ImageView>
+                  <JFXButton buttonType="RAISED" layoutX="88.0" layoutY="356.0" onAction="#importSet" styleClass="ButtonIO" stylesheets="@../css/application.css" text="Import Settings" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+                     <font>
+                        <Font name="Tahoma" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" layoutX="87.0" layoutY="311.0" onAction="#exportSet" styleClass="ButtonIO" stylesheets="@../css/application.css" text="Export Setttings" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+                     <font>
+                        <Font name="Tahoma" size="15.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="400.0" prefWidth="300.0" style="-fx-background-color: #003d82;">
+               <children>
+                  <JFXButton buttonType="RAISED" layoutX="186.0" layoutY="325.0" onAction="#bump" ripplerFill="#cf46bf" style="-fx-background-color: #7694e4;" text="Bump!" textAlignment="CENTER" AnchorPane.bottomAnchor="45.39999999999998">
+                     <font>
+                        <Font name="Tahoma" size="15.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXTextField fx:id="emailJFX" alignment="CENTER" layoutX="64.0" layoutY="86.0" prefHeight="30.0" prefWidth="170.0" promptText="E-mail" style="-fx-background-color: #7694e4;" AnchorPane.bottomAnchor="240.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+                  </JFXTextField>
+                  <JFXPasswordField fx:id="passJFX" alignment="CENTER" layoutX="64.0" layoutY="144.0" prefHeight="30.0" prefWidth="170.0" promptText="Password" style="-fx-background-color: #7694e4;" AnchorPane.bottomAnchor="180.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+                  <JFXDatePicker fx:id="dateJFX" defaultColor="#1a2947" layoutX="65.0" layoutY="200.0" prefHeight="30.0" prefWidth="170.0" promptText="                     31/12/1990" showWeekNumbers="true" style="-fx-background-color: #7694e4;" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="220.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="240.0" AnchorPane.leftAnchor="220.0">
+                     <image>
+                        <Image url="@../image/icons8-new-post-24.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="220.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="180.0" AnchorPane.leftAnchor="220.0">
+                     <image>
+                        <Image url="@../image/icons8-lock-24.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="78.0" fitWidth="154.0" layoutX="111.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="30.0">
+                     <image>
+                        <Image url="@../image/icons8-facebook-96.png" />
+                     </image>
+                     <effect>
+                        <Bloom threshold="0.0" />
+                     </effect>
+                  </ImageView>
+                  <Label fx:id="counter" layoutX="50.0" layoutY="304.0" prefHeight="70.0" prefWidth="70.0" styleClass="CounterLabel" stylesheets="@../css/application.css" text="?" AnchorPane.bottomAnchor="25.600000000000023">
+                     <font>
+                        <Font name="Tahoma Bold" size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </center>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</BorderPane>

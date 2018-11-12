@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.gbi.maven:selenium-maven-plugin:unknown">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/gbi/maven/selenium-maven-plugin/unknown/selenium-maven-plugin-unknown.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/gbi/maven/selenium-maven-plugin/unknown/selenium-maven-plugin-unknown-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/gbi/maven/selenium-maven-plugin/unknown/selenium-maven-plugin-unknown-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

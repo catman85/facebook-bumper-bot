@@ -1,0 +1,3 @@
+Main-Class: main.java.org.javafx.bumperui.application.Main
+Manifest-Version: 1.0
+
