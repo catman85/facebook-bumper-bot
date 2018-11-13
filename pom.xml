@@ -1,18 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.javafx.bumper</groupId>
-	<artifactId>org.javafx.bumper</artifactId>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.javafx.pickboy</groupId>
+	<artifactId>FacebookBumperBot</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0.0</version>
 	<name>Bumper-Tool</name>
-	<url>http://maven.apache.org</url>
+	<url>https://github.com/catman85/facebook-bumper-bot</url>
 
 	<properties>
-		<maven.compiler.source>1.9</maven.compiler.source>
-		<maven.compiler.target>1.9</maven.compiler.target>
+		<maven.compiler.source>10</maven.compiler.source>
+		<maven.compiler.target>10</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<my.project.version>1.0.0</my.project.version>
 	</properties>
@@ -20,11 +21,11 @@
 	<build>
 		<finalName>BumperUI</finalName>
 		<sourceDirectory>src</sourceDirectory>
-		<resources>
-			<resource>
-				<directory>resources</directory>
-			</resource>
-		</resources>
+		<!--<resources>-->
+			<!--<resource>-->
+				<!--<directory>resources</directory>-->
+			<!--</resource>-->
+		<!--</resources>-->
 		<!-- <testSourceDirectory>testing</testSourceDirectory> -->
 		<plugins>
 
@@ -43,14 +44,14 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 
-				<!--<version>3.7.0</version>-->
-				<!--<configuration>-->
-					<!--<source>1.9</source>-->
-					<!--<target>1.9</target>-->
-					<!--<release>9</release>-->
-					<!--<executable>javac9</executable>-->
-					<!--<encoding>UTF-8</encoding>-->
-				<!--</configuration>-->
+				<version>3.8.0</version>
+				<configuration>
+					<source>10</source>
+					<target>10</target>
+					<release>10</release>
+					<executable>javac10</executable>
+					<encoding>UTF-8</encoding>
+				</configuration>
 			</plugin>
 
 			<!-- Make this jar executable -->
@@ -62,17 +63,17 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<!--<classpathPrefix>lib/</classpathPrefix>-->
+							<classpathPrefix>BumperUI_lib/</classpathPrefix>
 							<mainClass>main.java.org.javafx.bumperui.application.Main</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
 			</plugin>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-			</plugin>
+			<!--<plugin>-->
+				<!--<groupId>org.apache.maven.plugins</groupId>-->
+				<!--<artifactId>maven-surefire-plugin</artifactId>-->
+			<!--</plugin>-->
 
 			<!--maven assembly plugin-->
 			<!--<plugin>-->
@@ -121,7 +122,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
-				<version>3.1.0</version>
+				<version>3.1.1</version>
 				<executions>
 					<execution>
 						<id>copy-dependencies</id>
@@ -132,7 +133,7 @@
 						<configuration>
 							<!-- exclude junit, we need runtime dependency only -->
 							<excludeArtifactIds> junit </excludeArtifactIds>
-							<outputDirectory>${project.build.directory}/FXLibrary_lib/</outputDirectory>
+							<outputDirectory>${project.build.directory}/BumperUI_lib/</outputDirectory>
 						</configuration>
 					</execution>
 				</executions>
