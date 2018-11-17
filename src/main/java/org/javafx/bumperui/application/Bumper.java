@@ -42,9 +42,6 @@ public class Bumper {
     }
 
     public void startWebDriver(){
-
-
-
         //--Visit FB and Login
         loginFb();
 

@@ -1,17 +1,19 @@
 package main.java.org.javafx.bumperui.application;
 
 
-import main.java.org.javafx.bumperui.data.Account;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import main.java.org.javafx.bumperui.data.Account;
 import main.java.org.javafx.bumperui.data.PostsToBump;
 import main.java.org.javafx.bumperui.tools.JavaFXTools;
 import main.java.org.javafx.bumperui.tools.NotificationType;
@@ -41,9 +43,22 @@ public class Controller {
     private static File file;
     private ArrayList<String> posts;
 
+    @FXML
+    private void initialize(){
+        // Listen for text changes in the JFXTextField "path" variable
+        path.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                importPostsFromFile();
+            }
+        });
+    }
+
+
 
     //File Explorer button
-    public void explore(ActionEvent actionEvent){
+    @FXML
+    public void explore(){
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select Text File With your Pemalinks");
         fileChooser.setInitialDirectory(
@@ -57,6 +72,8 @@ public class Controller {
             path.setText(file.toString());
         }
     }
+
+
 
     //Transfers post links from a file to an ArrayList
     private void importPostsFromFile(){
@@ -107,7 +124,7 @@ public class Controller {
     }
 
     private boolean validated(){
-        if(isAnyObjectNull(posts, commentJFX.getText(), sleepTimeJFX.getText(),emailJFX.getText(), passJFX.getText(), dateJFX.getValue())){
+        if(isAnyObjectNull(posts, commentJFX.getText(), sleepTimeJFX.getText(),emailJFX.getText(), passJFX.getText(), dateJFX.getValue(),path)){
             JavaFXTools.showNotification("Error","Missing arguments", Duration.seconds(2), NotificationType.ERROR);
             return false;
         }
@@ -119,11 +136,10 @@ public class Controller {
         return true;
     }
 
-
     //Final Submit button
     public void bump(ActionEvent actionEvent) {
 	    //Make sure you have proper input
-        importPostsFromFile();
+//        importPostsFromFile();
         if(!validated()){return;}
 
         JavaFXTools.showNotification("Bumping Starts","The browser will open up", Duration.seconds(2), NotificationType.SUCCESS);
