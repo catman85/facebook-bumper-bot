@@ -6,8 +6,7 @@ import javafx.application.Platform;
 import javafx.util.Duration;
 import main.java.org.javafx.bumperui.data.Account;
 import main.java.org.javafx.bumperui.data.PostsToBump;
-import main.java.org.javafx.bumperui.tools.JavaFXTools;
-import main.java.org.javafx.bumperui.tools.NotificationType;
+import org.controlsfx.control.Notifications;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -15,6 +14,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
+
 
 //import org.junit.Test;
 //TODO junit test
@@ -52,7 +52,7 @@ public class Bumper {
             goToPost();
 
             //--Bump dat lil bitch
-            bump();
+//            bump();
 
             //--Remove the post you just visited and update the UI
             removePost();
@@ -207,22 +207,21 @@ public class Bumper {
 
     private void removePost(){
         //remove the link you just visited from the array
-        //TODO bug: the comment was not deleted in the last post in the permalinks text file
         postsToBump.removePost();
     }
 
     private void success(){
 
-        //prepare for next Bump Round
-        postsToBump.ressurectPosts();
-
-
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
+                //prepare for next Bump Round
+                postsToBump.ressurectPosts();
                 // Update UI here.
-                JavaFXTools.showNotification("Success","Success", Duration.seconds(1), NotificationType.SUCCESS);
-
+                Notifications.create().darkStyle().hideAfter(Duration.seconds(2))
+                        .title("Success")
+                        .text("The Bumping has now Stopped")
+                        .showConfirm();
             }
         });
 

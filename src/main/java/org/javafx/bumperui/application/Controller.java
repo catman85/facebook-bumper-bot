@@ -15,9 +15,8 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import main.java.org.javafx.bumperui.data.Account;
 import main.java.org.javafx.bumperui.data.PostsToBump;
-import main.java.org.javafx.bumperui.tools.JavaFXTools;
-import main.java.org.javafx.bumperui.tools.NotificationType;
 import org.apache.commons.lang.StringUtils;
+import org.controlsfx.control.Notifications;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -54,7 +53,14 @@ public class Controller {
         });
     }
 
-
+    //Shows Sleep Tip
+    @FXML
+    public void showSleepTip(){
+        Notifications.create().darkStyle().hideAfter(Duration.seconds(2))
+                .title("Tip")
+                .text("A good value for Sleep Time is > 1700 ms")
+                .showInformation();
+    }
 
     //File Explorer button
     @FXML
@@ -82,7 +88,10 @@ public class Controller {
         file = new File(path.getText());
 
         if (file == null) {
-            JavaFXTools.showNotification("Error", "Please Select a file with your Permalinks",Duration.seconds(2),NotificationType.ERROR);
+            Notifications.create().darkStyle().hideAfter(Duration.seconds(2))
+                    .title("Error")
+                    .text("Please Select a file with your Permalinks")
+                    .showError();
             return;
         }
 
@@ -125,11 +134,17 @@ public class Controller {
 
     private boolean validated(){
         if(isAnyObjectNull(posts, commentJFX.getText(), sleepTimeJFX.getText(),emailJFX.getText(), passJFX.getText(), dateJFX.getValue(),path)){
-            JavaFXTools.showNotification("Error","Missing arguments", Duration.seconds(2), NotificationType.ERROR);
+            Notifications.create().darkStyle().hideAfter(Duration.seconds(2))
+                    .title("Error")
+                    .text("Missing arguments")
+                    .showError();
             return false;
         }
         if(!StringUtils.isNumeric(sleepTimeJFX.getText())){
-            JavaFXTools.showNotification("Error","Sleep Time must be a numeric value", Duration.seconds(2), NotificationType.ERROR);
+            Notifications.create().darkStyle().hideAfter(Duration.seconds(2))
+                    .title("Error")
+                    .text("Sleep Time must be a numeric value")
+                    .showError();
             return false;
         }
 
@@ -142,7 +157,10 @@ public class Controller {
 //        importPostsFromFile();
         if(!validated()){return;}
 
-        JavaFXTools.showNotification("Bumping Starts","The browser will open up", Duration.seconds(2), NotificationType.SUCCESS);
+        Notifications.create().darkStyle().hideAfter(Duration.seconds(2))
+                .title("Bumping Starts")
+                .text("The browser will open up")
+                .showConfirm();
 
         //Here you grab the stuff from the UI by running the myThread() constructor
         myThread bum = new myThread();

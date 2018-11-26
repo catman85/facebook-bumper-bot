@@ -35,7 +35,7 @@
                         <Insets />
                      </opaqueInsets>
                   </JFXTextField>
-                  <JFXTextField fx:id="sleepTimeJFX" alignment="CENTER" layoutX="64.0" layoutY="142.0" prefHeight="30.0" prefWidth="170.0" promptText="Sleep Time (ms)" style="-fx-background-color: #7694e4;" AnchorPane.bottomAnchor="180.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+                  <JFXTextField fx:id="sleepTimeJFX" alignment="CENTER" layoutX="64.0" layoutY="142.0" onAction="#showSleepTip" prefHeight="30.0" prefWidth="170.0" promptText="Sleep Time (ms)" style="-fx-background-color: #7694e4;" AnchorPane.bottomAnchor="180.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>

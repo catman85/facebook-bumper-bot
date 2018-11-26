@@ -17,15 +17,15 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<my.project.version>1.0.0</my.project.version>
 	</properties>
-<!--TODO Manifest -->
+
 	<build>
 		<finalName>BumperUI</finalName>
 		<sourceDirectory>src</sourceDirectory>
-		<!--<resources>-->
-			<!--<resource>-->
-				<!--<directory>resources</directory>-->
-			<!--</resource>-->
-		<!--</resources>-->
+		<resources>
+			<resource>
+				<directory>resources</directory>
+			</resource>
+		</resources>
 		<!-- <testSourceDirectory>testing</testSourceDirectory> -->
 		<plugins>
 
@@ -70,54 +70,6 @@
 				</configuration>
 			</plugin>
 
-			<!--<plugin>-->
-				<!--<groupId>org.apache.maven.plugins</groupId>-->
-				<!--<artifactId>maven-surefire-plugin</artifactId>-->
-			<!--</plugin>-->
-
-			<!--maven assembly plugin-->
-			<!--<plugin>-->
-				<!--<artifactId>maven-assembly-plugin</artifactId>-->
-				<!--<executions>-->
-					<!--<execution>-->
-						<!--<phase>package</phase>-->
-						<!--<goals>-->
-							<!--<goal>single</goal>-->
-						<!--</goals>-->
-					<!--</execution>-->
-				<!--</executions>-->
-				<!--<configuration>-->
-					<!--<archive>-->
-						<!--<manifest>-->
-							<!--<addClasspath>true</addClasspath>-->
-							<!--<mainClass>Main</mainClass>-->
-						<!--</manifest>-->
-					<!--</archive>-->
-					<!--<descriptorRefs>-->
-						<!--<descriptorRef>jar-with-dependencies</descriptorRef>-->
-					<!--</descriptorRefs>-->
-				<!--</configuration>-->
-			<!--</plugin>-->
-			<!--<plugin>-->
-				<!--<groupId>org.apache.maven.plugins</groupId>-->
-				<!--<artifactId>maven-shade-plugin</artifactId>-->
-				<!--<version>2.0</version>-->
-				<!--<executions>-->
-					<!--<execution>-->
-						<!--<phase>package</phase>-->
-						<!--<goals>-->
-							<!--<goal>shade</goal>-->
-						<!--</goals>-->
-						<!--<configuration>-->
-							<!--<transformers>-->
-								<!--<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">-->
-									<!--<mainClass>org.lazydevs.veetle.api.VeetleAPI</mainClass>-->
-								<!--</transformer>-->
-							<!--</transformers>-->
-						<!--</configuration>-->
-					<!--</execution>-->
-				<!--</executions>-->
-			<!--</plugin>-->
 			<!-- Copy project dependency -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -142,7 +94,6 @@
 			<plugin>
 				<groupId>com.gbi.maven</groupId>
 				<artifactId>selenium-maven-plugin</artifactId>
-				<!--<version>1.0.2</version>-->
 				<executions>
 					<execution>
 						<phase>process-test-resources</phase>
@@ -207,7 +158,7 @@
 
 	<dependencies>
 
-		<!--required for settings storage-->
+		<!--required for settings storage (ieSettings)-->
 		<dependency>
 			<groupId>com.googlecode.json-simple</groupId>
 			<artifactId>json-simple</artifactId>
@@ -231,8 +182,6 @@
 		<dependency>
 			<groupId>com.gbi.maven</groupId>
 			<artifactId>selenium-maven-plugin</artifactId>
-			<!--<version>1.0.2</version>-->
-			<!--<scope>test</scope>-->
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
@@ -241,14 +190,8 @@
 			<artifactId>commons-codec</artifactId>
 			<version>1.11</version>
 		</dependency>
-		<!-- DATABASE DRIVERS -->
-		<!--<dependency>-->
-			<!--<groupId>org.xerial</groupId>-->
-			<!--<artifactId>sqlite-jdbc</artifactId>-->
-			<!--<version>3.23.1</version>-->
-		<!--</dependency>-->
 
-		<!-- ikonli -->
+		<!-- ikonli Needed by JavaFXTools-->
 		<dependency>
 			<groupId>org.kordamp.ikonli</groupId>
 			<artifactId>ikonli-javafx</artifactId>
