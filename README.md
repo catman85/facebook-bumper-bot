@@ -13,3 +13,5 @@ Posts in facebook follow a "waterfall" pattern. Old, inactive posts are lost in 
 ## Visit this repo's [wiki](https://github.com/catman85/facebook-bumper-bot/wiki) to learn how to install and use this app
 
 ![Imgur](https://i.imgur.com/HpxDpkQ.png)
+
+### To get a simple double click executable version this app [donate via paypal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TBGYB92RMRV5L). You will be redirected to a dropbox link after payment.
