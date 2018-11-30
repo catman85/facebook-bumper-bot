@@ -7,14 +7,16 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="400.0" maxWidth="600.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.org.javafx.bumperui.application.Controller">
+<BorderPane maxHeight="420.0" maxWidth="600.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="600.0" stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.org.javafx.bumperui.application.Controller">
    <center>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -50,7 +52,7 @@
                         <Image url="@../image/icons8-sleep-24.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="78.0" fitWidth="154.0" layoutX="111.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="30.0">
+                  <ImageView fitHeight="78.0" fitWidth="154.0" layoutX="111.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="40.0">
                      <image>
                         <Image url="@../image/icons8-facebook-like-100.png" />
                      </image>
@@ -58,12 +60,12 @@
                         <Bloom threshold="0.0" />
                      </effect>
                   </ImageView>
-                  <JFXButton buttonType="RAISED" layoutX="88.0" layoutY="356.0" onAction="#importSet" styleClass="ButtonIO" stylesheets="@../css/application.css" text="Import Settings" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+                  <JFXButton buttonType="RAISED" layoutX="88.0" layoutY="356.0" onAction="#importSet" styleClass="ButtonIO" text="Import Settings" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
                      <font>
                         <Font name="Tahoma" size="15.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton buttonType="RAISED" layoutX="87.0" layoutY="311.0" onAction="#exportSet" styleClass="ButtonIO" stylesheets="@../css/application.css" text="Export Setttings" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+                  <JFXButton buttonType="RAISED" layoutX="87.0" layoutY="311.0" onAction="#exportSet" styleClass="ButtonIO" text="Export Setttings" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
                      <font>
                         <Font name="Tahoma" size="15.0" />
                      </font>
@@ -72,7 +74,7 @@
             </AnchorPane>
             <AnchorPane prefHeight="400.0" prefWidth="300.0" style="-fx-background-color: #003d82;">
                <children>
-                  <JFXButton buttonType="RAISED" layoutX="186.0" layoutY="325.0" onAction="#bump" ripplerFill="#cf46bf" style="-fx-background-color: #7694e4;" text="Bump!" textAlignment="CENTER" AnchorPane.bottomAnchor="45.39999999999998">
+                  <JFXButton buttonType="RAISED" layoutX="186.0" layoutY="325.0" onAction="#bump" style="-fx-background-color: #7694e4;" styleClass="Submit" text="Bump!" textAlignment="CENTER" AnchorPane.bottomAnchor="45.39999999999998">
                      <font>
                         <Font name="Tahoma" size="15.0" />
                      </font>
@@ -91,7 +93,7 @@
                         <Image url="@../image/icons8-lock-24.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="78.0" fitWidth="154.0" layoutX="111.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="30.0">
+                  <ImageView fitHeight="78.0" fitWidth="154.0" layoutX="111.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="40.0">
                      <image>
                         <Image url="@../image/icons8-facebook-96.png" />
                      </image>
@@ -99,11 +101,34 @@
                         <Bloom threshold="0.0" />
                      </effect>
                   </ImageView>
-                  <Label fx:id="counter" layoutX="50.0" layoutY="304.0" prefHeight="70.0" prefWidth="70.0" styleClass="CounterLabel" stylesheets="@../css/application.css" text="?" AnchorPane.bottomAnchor="25.600000000000023">
+                  <Label fx:id="counter" layoutX="50.0" layoutY="304.0" prefHeight="70.0" prefWidth="70.0" styleClass="CounterLabel" text="?" AnchorPane.bottomAnchor="26.0">
                      <font>
                         <Font name="Tahoma Bold" size="12.0" />
                      </font>
                   </Label>
+                  <Pane prefHeight="30.0" prefWidth="30.0" styleClass="UpperButton" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <children>
+                        <ImageView fx:id="exit" fitHeight="25.0" fitWidth="30.0" layoutX="3.0" layoutY="3.0" onMouseClicked="#exit" pickOnBounds="true" preserveRatio="true" styleClass="UpperButton">
+                           <image>
+                              <Image url="@../image/icons8-x-26.png" />
+                           </image>
+                           <effect>
+                              <Reflection />
+                           </effect>
+                        </ImageView>
+                     </children></Pane>
+                  <Pane layoutX="11.0" layoutY="18.0" prefHeight="30.0" prefWidth="30.0" styleClass="UpperButton" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="10.0">
+                     <children>
+                        <ImageView fx:id="minimize" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#minimize" pickOnBounds="true" preserveRatio="true" styleClass="UpperButton">
+                           <image>
+                              <Image url="@../image/icons8-horizontal-line-26.png" />
+                           </image>
+                           <effect>
+                              <Reflection />
+                           </effect>
+                        </ImageView>
+                     </children>
+                  </Pane>
                </children>
             </AnchorPane>
          </children>

@@ -1,9 +1,11 @@
 package main.java.org.javafx.bumperui.application;
 
+import javafx.util.Duration;
 import main.java.org.javafx.bumperui.data.Account;
 import javafx.application.Platform;
 import javafx.stage.FileChooser;
 import org.apache.commons.lang.StringUtils;
+import org.controlsfx.control.Notifications;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -144,7 +146,10 @@ public class ieSettings implements Runnable {
                         System.out.println("\nJSON Object: " + obj);
                         fw.flush();
                         fw.close();
+
+                        operationSucceded();
                     }catch(IOException e){
+                        operationFailed();
                         e.printStackTrace();
                     }
                 }
@@ -177,6 +182,7 @@ public class ieSettings implements Runnable {
 
                         fr.close();
                     } catch (IOException | ParseException e) {
+                        operationFailed();
                         e.printStackTrace();
                     }
                 }
@@ -246,6 +252,8 @@ public class ieSettings implements Runnable {
         c.path.setText(path);
         c.sleepTimeJFX.setText(sleep.toString());
         c.commentJFX.setText(comment);
+
+        operationSucceded();
     }
 
     private int monthNameToNum(String mon) throws java.text.ParseException {
@@ -261,6 +269,20 @@ public class ieSettings implements Runnable {
         }finally {
             return month;
         }
+    }
+
+    private void operationSucceded(){
+        Notifications.create().darkStyle().hideAfter(Duration.seconds(2))
+                .title("Operation Succeded")
+                .text("")
+                .showConfirm();
+    }
+
+    private void operationFailed(){
+        Notifications.create().darkStyle().hideAfter(Duration.seconds(2))
+                .title("Operation Failed")
+                .text("")
+                .showError();
     }
 }
 

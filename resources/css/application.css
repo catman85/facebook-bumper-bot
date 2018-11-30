@@ -3,7 +3,28 @@
     -fx-text-fill:#e9ebee;
 }
 
+.ButtonIO:hover{
+    -fx-background-color: #003d82;
+}
+
 .CounterLabel{
-    -fx-font-size: 4em;
+    -fx-font-size: 3em;
     -fx-text-fill:#e9ebee;
 }
+
+.UpperButton{
+    -fx-max-width:30;
+    -fx-max-height:30;
+}
+
+.UpperButton:hover{
+    -fx-background-color:#1a2947;
+}
+
+.Submit:hover{
+    -fx-background-color:#1a2947;
+}
+
+
+
+

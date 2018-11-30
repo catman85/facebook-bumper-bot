@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -77,6 +78,8 @@ public class Controller {
             System.out.println(file.toString());
             path.setText(file.toString());
         }
+
+
     }
 
 
@@ -149,6 +152,19 @@ public class Controller {
         }
 
         return true;
+    }
+
+    @FXML
+    public void minimize(){
+        Main.getPrStage().setIconified(true);
+    }
+
+
+    @FXML
+    public void exit(){
+        Platform.exit();
+        System.exit(0);
+        return;
     }
 
     //Final Submit button

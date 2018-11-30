@@ -52,7 +52,7 @@ public class Bumper {
             goToPost();
 
             //--Bump dat lil bitch
-//            bump();
+            bump();
 
             //--Remove the post you just visited and update the UI
             removePost();
