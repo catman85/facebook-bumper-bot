@@ -15,3 +15,5 @@ Posts in facebook follow a "waterfall" pattern. Old, inactive posts are lost in 
 ![Imgur](https://i.imgur.com/HpxDpkQ.png)
 
 ### To get a simple double click executable version this app [donate via paypal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TBGYB92RMRV5L). You will be redirected to a dropbox link after payment.
+
+# [Video Demo](https://www.youtube.com/watch?v=0GEK0TAIrFw)
